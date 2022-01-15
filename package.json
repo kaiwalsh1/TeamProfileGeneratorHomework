@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/kaiwalsh1/TeamProfileGeneratorHomework/issues"
   },
-  "homepage": "https://github.com/kaiwalsh1/TeamProfileGeneratorHomework#readme"
+  "homepage": "https://github.com/kaiwalsh1/TeamProfileGeneratorHomework#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.4.7"
+  }
 }
