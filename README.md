@@ -38,7 +38,7 @@ THEN I exit the application, and the HTML is generated
 - [Credits] (#Credits)
 
 ## Installation
-This application uses Jest and Inquirer
+This application uses Jest and Inquirer packages
 
 ## Usage
 
