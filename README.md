@@ -48,5 +48,5 @@ This application uses Jest and Inquirer packages
 ![]()
 
 ## Sources
-
+Tutor, Google, CJ Sanders
 

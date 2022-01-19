@@ -10,16 +10,25 @@ inquirer
     .prompt([
     {
         type: 'input',
-        message: '',
-        name: '',
+        message: `Manager's name`,
+        name: 'managerName',
     },
     {
-
+        type: 'input',
+        message: `Manager's Employee ID`,
+        name: 'managerId',
     },
     {
-
+        type: 'input',
+        message: `Manager's email address`,
+        name: 'managerEmail',
     },
     {
-
+        type: 'input',
+        message: `Manager's office number`,
+        name: 'managerNumber',
     },    
-    ]);
+    ])
+    .then(answers => {
+        
+    })
