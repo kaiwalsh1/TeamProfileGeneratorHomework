@@ -5,6 +5,7 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const teamMembers = [];
 
 inquirer 
     .prompt([
@@ -30,5 +31,18 @@ inquirer
     },    
     ])
     .then(answers => {
-        
+        console.log(answers);
+        const newManager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerNumber);
+        teamMembers.push(newManager);
     })
+
+const team = () => {
+    inquirer 
+    .prompt([
+    {
+        type: 'input',
+        message: `Manager's name`,
+        name: 'managerName',
+    }, 
+    ])
+};
