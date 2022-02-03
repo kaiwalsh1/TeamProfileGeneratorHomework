@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const htmlHelper = require('./src/Team.js');
 
 const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
@@ -40,7 +41,7 @@ const team = () => {
     inquirer 
     .prompt([
     {
-        type: 'input',
+        type: 'list',
         message: `Who would you like to add to your team?`,
         choices: ['Engineer', 'Intern', 'No more team members'],
         name: 'addTeamMember',
@@ -113,12 +114,22 @@ const newIntern = () => {
         },
     ])
     .then(answers => {
-        const newIntern = new Intern(answers.internName, answers.internId, ansers.internEmail, answers.internSchool);
+        const newIntern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
         teamMembers.push(newIntern);
         team();
     });
 };
 
-// const completeTeam = () => {
-//     let htmlFinish = 
-// }
+const completeTeam = () => {
+    console.log(teamMembers);
+    let htmlFinish = htmlHelper(teamMembers);
+    console.log(htmlFinish);
+    fs.writeFile('./dist/index.html', htmlFinish, (e) => {
+        if (e)
+            console.log(e);
+        else {
+            console.log('index file created successfully');
+        }
+    });
+}
+
