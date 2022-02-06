@@ -121,9 +121,7 @@ const newIntern = () => {
 };
 
 const completeTeam = () => {
-    console.log(teamMembers);
     let htmlFinish = htmlHelper(teamMembers);
-    console.log(htmlFinish);
     fs.writeFile('./dist/index.html', htmlFinish, (e) => {
         if (e)
             console.log(e);

@@ -1,45 +1,49 @@
-function htmlHelper (teamMembers) {
+function htmlHelper(teamMembers) {
     let htmlTeamMembers = [];
     for (let i = 0; i < teamMembers.length; i++) {
         if (teamMembers[i].getRole() === 'Manager') {
-            let managerTemplate = `<div class="col-sm-6">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">${teamMembers[i].getName()}</h5>
-                    <p class="card-text">${teamMembers[i].getRole()}</p>
+            let managerTemplate = `<div class="col-sm-4">
+            <div class="card">
+                <div class="card-body bg-primary">
+                    <h3 class="card-title">${teamMembers[i].getName()}</h3>
+                    <h5 class="card-text">
+                    <i class="fas fa-mug-hot"></i>
+                    ${teamMembers[i].getRole()}</h5>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">${teamMembers[i].getId()}</li>
-                        <li class="list-group-item">${teamMembers[i].getEmail()}</li>
-                        <li class="list-group-item">${teamMembers[i].getOfficeNumber()}</li>
+                        <li class="list-group-item">ID: ${teamMembers[i].getId()}</li>
+                        <li class="list-group-item">Email: <a href="mailto:${teamMembers[i].getEmail()}">${teamMembers[i].getEmail()}</a></li>
+                        <li class="list-group-item">Office Number: ${teamMembers[i].getOfficeNumber()}</li>
                     </ul>
                 </div>
             </div>
         </div>`
             htmlTeamMembers.push(managerTemplate);
         } else if (teamMembers[i].getRole() === 'Engineer') {
-            let engineerTemplate = `<div class="col-sm-6">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">${teamMembers[i].getName()}</h5>
-                    <p class="card-text">${teamMembers[i].getRole()}</p>
+            let engineerTemplate = `<div class="col-sm-4">
+            <div class="card">
+                <div class="card-body bg-primary">
+                    <h3 class="card-title">${teamMembers[i].getName()}</h3>
+                    <i class="fas fa-glasses"></i>
+                    <h5 class="card-text">${teamMembers[i].getRole()}</h5>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">${teamMembers[i].getId()}</li>
-                        <li class="list-group-item">${teamMembers[i].getEmail()}</li>
-                        <li class="list-group-item">${teamMembers[i].getGithub()}</li>
+                        <li class="list-group-item">ID: ${teamMembers[i].getId()}</li>
+                        <li class="list-group-item">Email: <a href="mailto: ${teamMembers[i].getEmail()}">${teamMembers[i].getEmail()}</a></li>
+                        <li class="list-group-item">GitHub: <a href="${teamMembers[i].getGithub()}" target="_blank">${teamMembers[i].getGithub()}>${teamMembers[i].getGithub()}</a></li>
                     </ul>
                 </div>
             </div>
         </div>`
             htmlTeamMembers.push(engineerTemplate);
         } else {
-            let internTemplate = `<div class="col-sm-6">
-            <div class="card text-center">
-                <div class="card-body">
+            let internTemplate = `<div class="col-sm-4">
+            <div class="card">
+                <div class="card-body bg-primary">
                     <h5 class="card-title">${teamMembers[i].getName()}</h5>
+                    <i class="fas fa-user-graduate"></i>
                     <p class="card-text">${teamMembers[i].getRole()}</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">${teamMembers[i].getId()}</li>
-                        <li class="list-group-item">${teamMembers[i].getEmail()}</li>
+                        <li class="list-group-item">Email: ${teamMembers[i].getEmail()}</li>
                         <li class="list-group-item">${teamMembers[i].getSchool()}</li>
                     </ul>
                 </div>
@@ -58,11 +62,17 @@ function htmlHelper (teamMembers) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Team Profile Generator</title>
 </head>
 
 <body>
-    <div class="row">
+<div class="navbar">
+<div class="jumbotron col-12" style="background-color: rgb(240, 97, 97);">
+    <h1 class="text-center">My Team</h1>
+</div>
+</div>
+
+    <div class="row mt-5 justify-content-center">
     ${htmlTeamMembers.join("")}
     </div>
 
