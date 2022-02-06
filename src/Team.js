@@ -19,12 +19,14 @@ function htmlHelper(teamMembers) {
         </div>`
             htmlTeamMembers.push(managerTemplate);
         } else if (teamMembers[i].getRole() === 'Engineer') {
-            let engineerTemplate = `<div class="col-sm-3 my-3 mx-3">
+            let engineerTemplate = `<div class="col-sm-3 mt-3 mx-1">
             <div class="card">
                 <div class="card-body bg-primary">
-                    <h3 class="card-title text-center">${teamMembers[i].getName()}</h3>
+                    <h3 class="card-title text-center">${teamMembers[i].getName()}</h3>                    
+                    <h5 class="card-text text-center">
                     <i class="fas fa-glasses"></i>
-                    <h5 class="card-text text-center">${teamMembers[i].getRole()}</h5>
+                    ${teamMembers[i].getRole()}</h5>
+                    
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: ${teamMembers[i].getId()}</li>
                         <li class="list-group-item">Email: <a href="mailto: ${teamMembers[i].getEmail()}">${teamMembers[i].getEmail()}</a></li>
@@ -35,12 +37,14 @@ function htmlHelper(teamMembers) {
         </div>`
             htmlTeamMembers.push(engineerTemplate);
         } else {
-            let internTemplate = `<div class="col-sm-3 my-3 mx-3">
+            let internTemplate = `<div class="col-sm-3 mt-3 mx-1">
             <div class="card">
                 <div class="card-body bg-primary">
-                    <h3 class="card-title text-center">${teamMembers[i].getName()}</h3>
-                    <i class="fas fa-user-graduate"></i>
-                    <h5 class="card-text text-center">${teamMembers[i].getRole()}</h5>
+                    <h3 class="card-title text-center">${teamMembers[i].getName()}</h3>                    
+                    <h5 class="card-text text-center">
+                        <i class="fas fa-user-graduate"></i>
+                        ${teamMembers[i].getRole()}
+                    </h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">${teamMembers[i].getId()}</li>
                         <li class="list-group-item">Email: ${teamMembers[i].getEmail()}</li>
