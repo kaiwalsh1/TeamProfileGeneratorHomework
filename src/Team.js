@@ -2,11 +2,11 @@ function htmlHelper(teamMembers) {
     let htmlTeamMembers = [];
     for (let i = 0; i < teamMembers.length; i++) {
         if (teamMembers[i].getRole() === 'Manager') {
-            let managerTemplate = `<div class="col-sm-4">
+            let managerTemplate = `<div class="col-sm-3 mt-3 mx-1">
             <div class="card">
                 <div class="card-body bg-primary">
-                    <h3 class="card-title">${teamMembers[i].getName()}</h3>
-                    <h5 class="card-text">
+                    <h3 class="card-title text-center">${teamMembers[i].getName()}</h3>
+                    <h5 class="card-text text-center">
                     <i class="fas fa-mug-hot"></i>
                     ${teamMembers[i].getRole()}</h5>
                     <ul class="list-group list-group-flush">
@@ -19,28 +19,28 @@ function htmlHelper(teamMembers) {
         </div>`
             htmlTeamMembers.push(managerTemplate);
         } else if (teamMembers[i].getRole() === 'Engineer') {
-            let engineerTemplate = `<div class="col-sm-4">
+            let engineerTemplate = `<div class="col-sm-3 my-3 mx-3">
             <div class="card">
                 <div class="card-body bg-primary">
-                    <h3 class="card-title">${teamMembers[i].getName()}</h3>
+                    <h3 class="card-title text-center">${teamMembers[i].getName()}</h3>
                     <i class="fas fa-glasses"></i>
-                    <h5 class="card-text">${teamMembers[i].getRole()}</h5>
+                    <h5 class="card-text text-center">${teamMembers[i].getRole()}</h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: ${teamMembers[i].getId()}</li>
                         <li class="list-group-item">Email: <a href="mailto: ${teamMembers[i].getEmail()}">${teamMembers[i].getEmail()}</a></li>
-                        <li class="list-group-item">GitHub: <a href="${teamMembers[i].getGithub()}" target="_blank">${teamMembers[i].getGithub()}>${teamMembers[i].getGithub()}</a></li>
+                        <li class="list-group-item">GitHub: <a href="http://github.com/${teamMembers[i].getGithub()}" target="_blank">${teamMembers[i].getGithub()}</a></li>
                     </ul>
                 </div>
             </div>
         </div>`
             htmlTeamMembers.push(engineerTemplate);
         } else {
-            let internTemplate = `<div class="col-sm-4">
+            let internTemplate = `<div class="col-sm-3 my-3 mx-3">
             <div class="card">
                 <div class="card-body bg-primary">
-                    <h5 class="card-title">${teamMembers[i].getName()}</h5>
+                    <h3 class="card-title text-center">${teamMembers[i].getName()}</h3>
                     <i class="fas fa-user-graduate"></i>
-                    <p class="card-text">${teamMembers[i].getRole()}</p>
+                    <h5 class="card-text text-center">${teamMembers[i].getRole()}</h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">${teamMembers[i].getId()}</li>
                         <li class="list-group-item">Email: ${teamMembers[i].getEmail()}</li>
@@ -62,12 +62,13 @@ function htmlHelper(teamMembers) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/css">
     <title>Team Profile Generator</title>
 </head>
 
 <body>
 <div class="navbar">
-<div class="jumbotron col-12" style="background-color: rgb(240, 97, 97);">
+<div class="jumbotron col-12 py-5" style="background-color: rgb(240, 97, 97);">
     <h1 class="text-center">My Team</h1>
 </div>
 </div>

@@ -40,12 +40,11 @@ THEN I exit the application, and the HTML is generated
 ## Installation
 This application uses Jest and Inquirer packages
 
-## Usage
-
-
-
 ## Walkthrough Video
 ![]()
+
+## Screenshot
+![teamprofilegenerator](./assets/teamprofilegenerator.png)
 
 ## Sources
 Tutor, Google, CJ Sanders
