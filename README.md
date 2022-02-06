@@ -1,8 +1,6 @@
 # TeamProfileGeneratorHomework
 By: Kai Walsh
 
-## Built With
-
 ## Description
 Built a command-line application from scratch that takes information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Tested each part of code with jest.
 
