@@ -46,9 +46,9 @@ function htmlHelper(teamMembers) {
                         ${teamMembers[i].getRole()}
                     </h5>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">${teamMembers[i].getId()}</li>
-                        <li class="list-group-item">Email: ${teamMembers[i].getEmail()}</li>
-                        <li class="list-group-item">${teamMembers[i].getSchool()}</li>
+                        <li class="list-group-item">ID: ${teamMembers[i].getId()}</li>
+                        <li class="list-group-item">Email: <a href="mailto:${teamMembers[i].getEmail()}">${teamMembers[i].getEmail()}</li>
+                        <li class="list-group-item">School: ${teamMembers[i].getSchool()}</li>
                     </ul>
                 </div>
             </div>
