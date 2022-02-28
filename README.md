@@ -40,6 +40,7 @@ This application uses Jest and Inquirer packages
 
 ## Walkthrough Video
 ![TeamProfileGeneratorHomework](./assets/TeamProfileGeneratorHomework.gif)
+[link to walkthrough video](https://drive.google.com/file/d/1YBS6y9XbbcO52WnJTVjS17Yywz3ISlF1/view)
 
 ## Sources
 Tutor, Google, CJ Sanders
